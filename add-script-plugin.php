@@ -71,17 +71,17 @@ if ( ! function_exists( 'ihs_insert_codes' ) ) {
 	}
 }
 
-if ( ! function_exists( 'ihs_enqueue_custom_style' ) ) {
+if ( ! function_exists( 'ihs_enqueue_custom_scripts' ) ) {
 	/**
-	 * Includes custom styles and scripts and adds the inline styles and scripts to the theme added by the user in the dashboard.
+	 * Includes custom scripts and scripts and adds the inline styles and scripts to the theme added by the user in the dashboard.
 	 */
-	function ihs_enqueue_custom_style() {
+	function ihs_enqueue_custom_scripts() {
 		wp_enqueue_style( 'ihs_custom_code_style', plugins_url( 'add-script-plugin' ) . '/style.css' );
 		wp_enqueue_script( 'ihs_custom_code_script', plugins_url( 'add-script-plugin' ) . '/js/javascript.js', array( 'jquery' ), '', true );
 		$custom_css = esc_html( get_option( 'ihs_style_codes' ) );
-		$custom_js = esc_js( get_option( 'ihs_script_codes' ) );
+		$custom_js = get_option( 'ihs_script_codes' );
 		wp_add_inline_style( 'ihs_custom_code_style', $custom_css );
 		wp_add_inline_script( 'ihs_custom_code_script', $custom_js );
 	}
-	add_action( 'wp_enqueue_scripts', 'ihs_enqueue_custom_style', 100 );
+	add_action( 'wp_enqueue_scripts', 'ihs_enqueue_custom_scripts', 100 );
 }
