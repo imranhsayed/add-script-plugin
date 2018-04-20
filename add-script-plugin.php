@@ -2,7 +2,7 @@
 /*
 Plugin Name: Add Script Plugin
 Description: A plugin to insert style codes
-Plugin URI:   http://imransayed.com/custom-post-tax-builder
+Plugin URI:   https://github.com/imranhsayed/add-script-plugin
 Author: Imran Sayed
 Author URI:   https://profiles.wordpress.org/gsayed786
 Version: 1.0.0
